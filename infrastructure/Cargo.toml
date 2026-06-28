@@ -1,0 +1,10 @@
+[package]
+name = "infrastructure"
+version = "0.1.0"
+edition = "2021"
+
+# Adapters implementing the domain ports. The only place the IO crates live.
+[dependencies]
+domain = { path = "../domain" }
+tiff = "0.11"
+serde_json = "1"
