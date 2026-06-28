@@ -1,0 +1,81 @@
+@import "ol/ol.css";
+
+:root {
+  --bg: #1e1f22;
+  --panel: #2b2d31;
+  --panel-2: #232428;
+  --fg: #e6e6e6;
+  --muted: #9aa0a6;
+  --border: #3a3d42;
+  --accent: #4c8bf5;
+}
+:root[data-theme="light"] {
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --panel-2: #eef0f3;
+  --fg: #1c1e21;
+  --muted: #5f6368;
+  --border: #d4d7dc;
+  --accent: #2f6fe0;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; }
+body {
+  font: 13px/1.4 system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.app { display: flex; flex-direction: column; height: 100%; }
+.body { flex: 1; display: flex; min-height: 0; }
+
+.topbar, .status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.status { border-top: 1px solid var(--border); border-bottom: none; }
+.topbar .brand { font-weight: 700; margin-right: 8px; }
+.topbar .sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+.topbar .spacer { flex: 1; }
+.topbar .xyz { width: 240px; }
+
+.left, .right {
+  width: 260px;
+  background: var(--panel-2);
+  border-right: 1px solid var(--border);
+  padding: 10px;
+  overflow-y: auto;
+}
+.right { border-right: none; border-left: 1px solid var(--border); width: 280px; }
+.left h3, .right h3 { margin: 4px 0 8px; font-size: 12px; text-transform: uppercase; color: var(--muted); }
+
+.map { flex: 1; min-width: 0; height: 100%; }
+
+.layer { padding: 6px 0; border-bottom: 1px solid var(--border); }
+.layer .vis { display: flex; align-items: center; gap: 6px; }
+.layer .row { display: flex; gap: 4px; margin-top: 4px; }
+.layer .missing { color: #e0625f; text-decoration: line-through; }
+
+.tools { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+.tools button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.hint { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin-bottom: 10px; color: var(--muted); }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+.muted { color: var(--muted); }
+
+input, button {
+  font: inherit;
+  color: var(--fg);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+button { cursor: pointer; }
+button:hover { border-color: var(--accent); }
+
+.status .coord { color: var(--muted); margin-right: 12px; font-variant-numeric: tabular-nums; }

@@ -1,0 +1,8 @@
+[package]
+name = "application"
+version = "0.1.0"
+edition = "2021"
+
+# Use-case layer: depends only on the domain. No GUI/IO crates.
+[dependencies]
+domain = { path = "../domain" }
