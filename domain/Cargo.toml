@@ -1,0 +1,9 @@
+[package]
+name = "domain"
+version = "0.1.0"
+edition = "2021"
+
+# DDD domain core: pure. No GUI/IO/framework crates (iced, tiff, ureq, rfd, image).
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
