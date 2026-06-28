@@ -1,0 +1,11 @@
+/openspec
+/target
+
+# frontend
+app/node_modules
+app/ui/node_modules
+app/ui/dist
+
+# tauri generated
+app/src-tauri/gen
+app/src-tauri/app-icon.png
